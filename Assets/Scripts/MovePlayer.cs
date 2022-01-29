@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
-{
-    public float speed = 1f;
+{   public float baseSpeed = 3f;
+    public float slowSpeed = 1f;
+    public LayerMask platformLayer;
+    //public float speed = 1f;
 
     private CharacterController _characterController;
     private Vector3 _direction;
@@ -19,10 +21,18 @@ public class MovePlayer : MonoBehaviour
 
     void Update()
     {
-        if (canMove)
-        {
-            _characterController.SimpleMove(_direction * speed);
-        }
+        float speed = baseSpeed;
+        if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hitInfo, 1f, platformLayer))
+            if (canMove)
+            {
+                var platform = hitInfo.collider.GetComponent<ChangeMaterial>();
+                if (platform.isCorrupt)
+                {
+                    speed = slowSpeed;
+                }
+             _characterController.SimpleMove(_direction * speed);
+            }
+
     }
 
     public void OnPlayerMove(Vector2 value)
