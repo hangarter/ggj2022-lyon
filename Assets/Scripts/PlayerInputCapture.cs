@@ -23,6 +23,7 @@ public class PlayerInputCapture : MonoBehaviour
 
         if(OnPlayerMove != null)
         {
+            Debug.Log(input);
             OnPlayerMove(input);
         }
     }

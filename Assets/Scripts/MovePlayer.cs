@@ -22,8 +22,8 @@ public class MovePlayer : MonoBehaviour
         _characterController.SimpleMove(_direction * speed);
     }
 
-    internal void OnPlayerMove(Vector2 value)
+    public void OnPlayerMove(Vector2 value)
     {
-        _direction = value;
+        _direction = new Vector3(-value.y, 0, value.x);
     }
 }

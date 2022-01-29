@@ -849,7 +849,6 @@ GameObject:
   - component: {fileID: 1276982451}
   - component: {fileID: 1276982450}
   - component: {fileID: 1276982454}
-  - component: {fileID: 1276982455}
   m_Layer: 0
   m_Name: Arena colliders
   m_TagString: Untagged
@@ -937,19 +936,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.131235, y: 1.0488434, z: 23.288631}
   m_Center: {x: -2.509138, y: 15.387035, z: 4.1025796}
---- !u!135 &1276982455
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1276982447}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 4.957856
-  m_Center: {x: -2.4391646, y: 0, z: 4.34}
 --- !u!1 &1319824653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,7 +1324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1941353747222640211, guid: 4ab27174bd908954ba294988616c625d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.14
+      value: 0.68
       objectReference: {fileID: 0}
     - target: {fileID: 1941353747222640211, guid: 4ab27174bd908954ba294988616c625d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1545,7 +1531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8659068756967608052, guid: cffe28f11688b8c47b243cd3eb8388d1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.46
+      value: 0.91
       objectReference: {fileID: 0}
     - target: {fileID: 8659068756967608052, guid: cffe28f11688b8c47b243cd3eb8388d1, type: 3}
       propertyPath: m_LocalRotation.w
