@@ -31,20 +31,18 @@ public class PlayerInputObserver : MonoBehaviour
 
     private void OnPlayerJoined(PlayerInput input)
     {
-        ////var startPosition = _playerSpawningPositions[_currentPlayerJoinedIndex];
         var player = Instantiate(playerPrefab, _playerSpawningPositions[_currentPlayerJoinedIndex].transform.position, Quaternion.identity);
-        //player.AddComponent(input);
+
         input.GetComponent<PlayerInputCapture>().OnPlayerMove += player.GetComponent<MovePlayer>().OnPlayerMove;
         Debug.Log(input.GetInstanceID());
 
         var ballThrower = player.GetComponent<BallThrower>();
 
-        ////ballThrower.startPosition = startPosition.transform.position;
+
         ballThrower.targetPosition = _targetPositions[_currentPlayerJoinedIndex];
         ballThrower.ball = ball;
 
         _currentPlayerJoinedIndex++;
-        //Debug.Log($"Player {input.GetInstanceID()} joined!");
     }
 
     // Update is called once per frame

@@ -3,9 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static SquarePointCounter;
 
 public class PointsManager : MonoBehaviour
 {
+    public delegate void NotifyPointScored(FloorType floorType);
+    public event NotifyPointScored OnPointScored;
+
     public TMP_Text scoreLabel;
     public GameObject lavaPlatform;
     public GameObject icePlatform;
@@ -47,6 +51,11 @@ public class PointsManager : MonoBehaviour
             case SquarePointCounter.FloorType.Lava:
                 player2Score++;
                 break;
+        }
+
+        if(OnPointScored != null)
+        {
+            OnPointScored(floorType);
         }
     }
 }
