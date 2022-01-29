@@ -19,36 +19,31 @@ public class BallThrower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //transform.position = startPosition;
         _canHitBall = true;
         _ballRigidBody = ball.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private Vector3 ForceDirection(float supplementarStrength)
     {
-        //if (Keyboard.current.spaceKey.isPressed && _canHitBall)
-        //{
-        //    _ballRigidBody.AddForce(ForceDirection(), ForceMode.Impulse);
-        //    _canHitBall = false;
-        //}
-    }
-
-    private Vector3 ForceDirection()
-    {
-        return ((targetPosition.transform.position.normalized - transform.position.normalized) + Vector3.up * upStrength) * generalStrength;
+        return ((targetPosition.transform.position.normalized - transform.position.normalized) + Vector3.up * upStrength) * (generalStrength + supplementarStrength);
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (hit.collider.tag.Equals("Ball") && _canHitBall)
         {
-            _ballRigidBody.AddForce(ForceDirection(), ForceMode.Impulse);
-            _canHitBall = false;
-            Task.Run(() => {
-                Task.Delay(3000);
-                _canHitBall = true;
-            });
+            ThrowBall();
         }
+    }
+
+    public void ThrowBall(float cannonStrength = 0)
+    {
+        _ballRigidBody.AddForce(ForceDirection(cannonStrength), ForceMode.Impulse);
+        _canHitBall = false;
+        Task.Run(() =>
+        {
+            Task.Delay(3000);
+            _canHitBall = true;
+        });
     }
 }

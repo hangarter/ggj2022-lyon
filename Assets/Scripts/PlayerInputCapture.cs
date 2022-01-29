@@ -6,8 +6,10 @@ using UnityEngine.InputSystem;
 public class PlayerInputCapture : MonoBehaviour
 {
     public delegate void NotifyPlayerMovement(Vector2 value);
+    public delegate void NotifyPlayerButtonPressed();
 
     public event NotifyPlayerMovement OnPlayerMove;
+    public event NotifyPlayerButtonPressed OnCannonButtonPressed;
 
     private PlayerInput _playerInput;
 
@@ -23,8 +25,15 @@ public class PlayerInputCapture : MonoBehaviour
 
         if(OnPlayerMove != null)
         {
-            Debug.Log(input);
             OnPlayerMove(input);
+        }
+    }
+
+    private void OnCannon(InputValue value)
+    {
+        if(OnCannonButtonPressed != null)
+        {
+            OnCannonButtonPressed();
         }
     }
 }

@@ -8,6 +8,7 @@ public class PlayerInputObserver : MonoBehaviour
 {
     public List<GameObject> _targetPositions;
     public List<GameObject> _playerSpawningPositions;
+    public List<Cannon> _cannons;
     public GameObject ball;
     public GameObject playerPrefab;
 
@@ -31,20 +32,23 @@ public class PlayerInputObserver : MonoBehaviour
 
     private void OnPlayerJoined(PlayerInput input)
     {
-        ////var startPosition = _playerSpawningPositions[_currentPlayerJoinedIndex];
         var player = Instantiate(playerPrefab, _playerSpawningPositions[_currentPlayerJoinedIndex].transform.position, Quaternion.identity);
-        //player.AddComponent(input);
+
         input.GetComponent<PlayerInputCapture>().OnPlayerMove += player.GetComponent<MovePlayer>().OnPlayerMove;
-        Debug.Log(input.GetInstanceID());
+        input.GetComponent<PlayerInputCapture>().OnCannonButtonPressed += _cannons[_currentPlayerJoinedIndex].OnCannonButtonPressed;
+        input.GetComponent<PlayerInputCapture>().OnPlayerMove += _cannons[_currentPlayerJoinedIndex].OnCannonMoved;
+
+        _cannons[_currentPlayerJoinedIndex].ball = ball;
+        _cannons[_currentPlayerJoinedIndex].ballThrower = player.GetComponent<BallThrower>();
+        _cannons[_currentPlayerJoinedIndex].movePlayer = player.GetComponent<MovePlayer>();
 
         var ballThrower = player.GetComponent<BallThrower>();
 
-        ////ballThrower.startPosition = startPosition.transform.position;
+
         ballThrower.targetPosition = _targetPositions[_currentPlayerJoinedIndex];
         ballThrower.ball = ball;
 
         _currentPlayerJoinedIndex++;
-        //Debug.Log($"Player {input.GetInstanceID()} joined!");
     }
 
     // Update is called once per frame
