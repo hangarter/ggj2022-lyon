@@ -58,8 +58,6 @@ public class PointsManager : MonoBehaviour
         if (!canScore) return;
         canScore = false;
 
-        Debug.Log("Collision");
-
         switch (floorType)
         {
             case SquarePointCounter.FloorType.Ice:

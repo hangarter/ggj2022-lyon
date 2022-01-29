@@ -34,7 +34,9 @@ public class PlayerInputObserver : MonoBehaviour
     {
         var player = Instantiate(playerPrefab, _playerSpawningPositions[_currentPlayerJoinedIndex].transform.position, Quaternion.identity);
 
-        input.GetComponent<PlayerInputCapture>().OnPlayerMove += player.GetComponent<MovePlayer>().OnPlayerMove;
+        var movePlayer = player.GetComponent<MovePlayer>();
+
+        input.GetComponent<PlayerInputCapture>().OnPlayerMove += movePlayer.OnPlayerMove;
         input.GetComponent<PlayerInputCapture>().OnCannonButtonPressed += _cannons[_currentPlayerJoinedIndex].OnCannonButtonPressed;
         input.GetComponent<PlayerInputCapture>().OnPlayerMove += _cannons[_currentPlayerJoinedIndex].OnCannonMoved;
 
@@ -43,6 +45,15 @@ public class PlayerInputObserver : MonoBehaviour
 
         var ballThrower = player.GetComponent<BallThrower>();
 
+        switch (_currentPlayerJoinedIndex)
+        {
+            case 0:
+                ballThrower.throwDirection = BallThrower.ThrowDirection.Left;
+                break;
+            case 1:
+                ballThrower.throwDirection = BallThrower.ThrowDirection.Right;
+                break;
+        }
 
         ballThrower.targetPosition = _targetPositions[_currentPlayerJoinedIndex];
         ballThrower.ball = ball;

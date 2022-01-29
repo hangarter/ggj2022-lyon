@@ -133,7 +133,7 @@ MonoBehaviour:
   ball: {fileID: 0}
   generalStrength: 1.5
   upStrength: 0.5
-  startPosition: {x: 0, y: 0, z: 0}
+  throwDirection: 0
 --- !u!114 &7300662165240543317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,4 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8acdf808a7f75d45bf6410a2aca3df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  baseSpeed: 5
+  slowSpeed: 2
+  platformLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  canMove: 0
