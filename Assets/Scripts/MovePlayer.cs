@@ -36,7 +36,6 @@ public class MovePlayer : MonoBehaviour
             _characterController.SimpleMove(_direction * speed);
         }
 
-        Debug.Log($"Speed: {speed}");
     }
 
     public void OnPlayerMove(Vector2 value)
