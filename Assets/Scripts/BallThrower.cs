@@ -11,10 +11,16 @@ public class BallThrower : MonoBehaviour
     public GameObject ball;
     public float generalStrength = 2f;
     public float upStrength = 1.4f;
-    public Vector3 startPosition;
+    public ThrowDirection throwDirection;
 
     private Rigidbody _ballRigidBody;
     private bool _canHitBall;
+
+    public enum ThrowDirection
+    {
+        Left,
+        Right
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -23,9 +29,9 @@ public class BallThrower : MonoBehaviour
         _ballRigidBody = ball.GetComponent<Rigidbody>();
     }
 
-    private Vector3 ForceDirection(float supplementarStrength)
+    private Vector3 ForceDirection()
     {
-        return ((targetPosition.transform.position.normalized - transform.position.normalized) + Vector3.up * upStrength) * (generalStrength + supplementarStrength);
+        return ((targetPosition.transform.position.normalized - transform.position.normalized) /*+ Vector3.up * upStrength*/) * (generalStrength);
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
@@ -36,9 +42,18 @@ public class BallThrower : MonoBehaviour
         }
     }
 
-    public void ThrowBall(float cannonStrength = 0)
+    public void ThrowBall()
     {
-        _ballRigidBody.AddForce(ForceDirection(cannonStrength), ForceMode.Impulse);
+        Debug.Log(transform.forward);
+        switch (throwDirection)
+        {
+            case ThrowDirection.Left:
+                _ballRigidBody.AddForce(new Vector3(0, .3f, 1f) * generalStrength, ForceMode.Impulse);
+                break;
+            case ThrowDirection.Right:
+                _ballRigidBody.AddForce(new Vector3(0, .3f, -1f) * generalStrength, ForceMode.Impulse);
+                break;
+        }
         _canHitBall = false;
         Task.Run(() =>
         {

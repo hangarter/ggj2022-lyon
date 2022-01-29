@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8132055591552383610}
   - component: {fileID: 8132055591552383609}
   - component: {fileID: 8132055591552383608}
-  - component: {fileID: 8132055591552383591}
   - component: {fileID: 726198987321504353}
+  - component: {fileID: -5865610481053224250}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -86,20 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &8132055591552383591
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8132055591552383590}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &726198987321504353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,12 +100,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movePlayer: {fileID: 0}
   ball: {fileID: 0}
-  ballThrower: {fileID: 0}
   cannonStrength: 10
   canFire: 0
-  minPositionX: -4.5
-  maxPositionX: -0.28
+  minPositionX: 7.5
+  maxPositionX: 12
   speed: 10
+--- !u!114 &-5865610481053224250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8132055591552383590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb68926b7918e6a46afa6876a98f57cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {fileID: 0}
+  ball: {fileID: 0}
+  generalStrength: 10
+  upStrength: 1
+  throwDirection: 0
 --- !u!1 &8132055591831476731
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +146,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8132055591831476731}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.61, z: -0.18}
+  m_LocalPosition: {x: 0, y: 1.56, z: -0.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

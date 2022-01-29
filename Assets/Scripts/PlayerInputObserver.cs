@@ -39,7 +39,6 @@ public class PlayerInputObserver : MonoBehaviour
         input.GetComponent<PlayerInputCapture>().OnPlayerMove += _cannons[_currentPlayerJoinedIndex].OnCannonMoved;
 
         _cannons[_currentPlayerJoinedIndex].ball = ball;
-        _cannons[_currentPlayerJoinedIndex].ballThrower = player.GetComponent<BallThrower>();
         _cannons[_currentPlayerJoinedIndex].movePlayer = player.GetComponent<MovePlayer>();
 
         var ballThrower = player.GetComponent<BallThrower>();

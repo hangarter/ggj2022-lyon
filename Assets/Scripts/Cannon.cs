@@ -10,7 +10,6 @@ public class Cannon : MonoBehaviour
 
     public MovePlayer movePlayer;
     public GameObject ball;
-    public BallThrower ballThrower;
     public float cannonStrength;
     public bool canFire;
     public float minPositionX = -4.5f;
@@ -19,12 +18,15 @@ public class Cannon : MonoBehaviour
 
     private Rigidbody _ballRigidBody;
     private float movement;
+    private BallThrower ballThrower;
+
 
     void Start()
     {
 
         canFire = false;
-        _ballRigidBody = ball.GetComponent<Rigidbody>();    
+        _ballRigidBody = ball.GetComponent<Rigidbody>();
+        ballThrower = GetComponent<BallThrower>();
     }
 
     private void Update()
@@ -46,7 +48,7 @@ public class Cannon : MonoBehaviour
             ball.transform.parent = null;
             _ballRigidBody.isKinematic = false;
             _ballRigidBody.detectCollisions = true;
-            ballThrower.ThrowBall(cannonStrength);
+            ballThrower.ThrowBall();
             canFire = false;
             if(OnCannonFired != null)
             {
