@@ -40,7 +40,7 @@ public class PlayerInputObserver : MonoBehaviour
         var ballThrower = player.GetComponent<BallThrower>();
 
         ////ballThrower.startPosition = startPosition.transform.position;
-        //ballThrower.targetPosition = _targetPositions[_currentPlayerJoinedIndex];
+        ballThrower.targetPosition = _targetPositions[_currentPlayerJoinedIndex];
         ballThrower.ball = ball;
 
         _currentPlayerJoinedIndex++;
