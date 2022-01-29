@@ -123,7 +123,7 @@
                 {
                     "name": "",
                     "id": "13f97a08-de9b-4aed-bde5-539279c09d25",
-                    "path": "",
+                    "path": "<XInputController>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",

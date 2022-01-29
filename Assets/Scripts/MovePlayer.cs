@@ -9,7 +9,7 @@ public class MovePlayer : MonoBehaviour
 
     private CharacterController _characterController;
     private Vector3 _direction;
-
+    internal bool canMove;
 
     void Start()
     {
@@ -19,7 +19,10 @@ public class MovePlayer : MonoBehaviour
 
     void Update()
     {
-        _characterController.SimpleMove(_direction * speed);
+        if (canMove)
+        {
+            _characterController.SimpleMove(_direction * speed);
+        }
     }
 
     public void OnPlayerMove(Vector2 value)

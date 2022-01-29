@@ -9,6 +9,8 @@ public class CannonManager : MonoBehaviour
     public GameObject ball;
     public GameObject spawningPointPlayer1;
     public GameObject spawningPointPlayer2;
+    public Cannon player1Cannon;
+    public Cannon player2Cannon;
 
     void Start()
     {
@@ -24,16 +26,16 @@ public class CannonManager : MonoBehaviour
         {
             case SquarePointCounter.FloorType.Lava:
                 ball.transform.position = spawningPointPlayer2.transform.position;
+                player2Cannon.canFire = true;
+                ball.transform.parent = player2Cannon.transform;
                 break;
             case SquarePointCounter.FloorType.Ice:
                 ball.transform.position = spawningPointPlayer1.transform.position;
+                player1Cannon.canFire = true;
+                ball.transform.parent = player1Cannon.transform;
+
                 break;
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
