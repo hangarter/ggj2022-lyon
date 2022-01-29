@@ -112,9 +112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb3bcd32f2660842800dfa1f952e97f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movePlayer: {fileID: 0}
   ball: {fileID: 0}
   ballThrower: {fileID: 0}
-  cannonStrength: 15
+  cannonStrength: 10
   canFire: 0
   minPositionX: -4.5
   maxPositionX: -0.28

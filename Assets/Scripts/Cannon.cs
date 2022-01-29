@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
+    public delegate void NotifyCannonFired();
+    public event NotifyCannonFired OnCannonFired;
+
     public MovePlayer movePlayer;
     public GameObject ball;
     public BallThrower ballThrower;
@@ -45,6 +48,10 @@ public class Cannon : MonoBehaviour
             _ballRigidBody.detectCollisions = true;
             ballThrower.ThrowBall(cannonStrength);
             canFire = false;
+            if(OnCannonFired != null)
+            {
+                OnCannonFired();
+            }
         }
     }
 
