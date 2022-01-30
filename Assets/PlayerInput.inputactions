@@ -222,6 +222,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Victory Screen Selection",
+            "id": "14987445-2367-4ad1-bca6-2ae42cf07232",
+            "actions": [
+                {
+                    "name": "Retry",
+                    "type": "Button",
+                    "id": "fde1f50d-7274-497b-8dc2-ad8d196abe41",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Menu",
+                    "type": "Button",
+                    "id": "7a12846e-b21e-4eb7-9f6a-e9ed017b621f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "04893e36-0656-4545-8f81-1cb3442a7790",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Retry",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f0916afc-bcf5-47a5-8015-b1fa37da4c95",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

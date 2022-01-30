@@ -8,6 +8,9 @@ public class PlayerInputObserver : MonoBehaviour
 {
     public List<GameObject> _targetPositions;
     public List<GameObject> _playerSpawningPositions;
+    public List<AudioClip> playerHittingSounds;
+    public List<PlayerInput> playerInputs;
+
     public List<Cannon> _cannons;
     public GameObject ball;
     public GameObject playerPrefab;
@@ -23,6 +26,7 @@ public class PlayerInputObserver : MonoBehaviour
 
         _playerInputManager.onPlayerJoined += OnPlayerJoined;
         _playerInputManager.onPlayerLeft += OnPlayerLeft;
+
     }
 
     private void OnPlayerLeft(PlayerInput input)
@@ -32,7 +36,14 @@ public class PlayerInputObserver : MonoBehaviour
 
     private void OnPlayerJoined(PlayerInput input)
     {
+        if (playerInputs == null) playerInputs = new List<PlayerInput>();
+        playerInputs.Add(input);
+
         var player = Instantiate(playerPrefab, _playerSpawningPositions[_currentPlayerJoinedIndex].transform.position, Quaternion.identity);
+
+        var playHittingSound = player.GetComponent<PlayHittingSound>();
+
+        playHittingSound.hittingSound = playerHittingSounds[_currentPlayerJoinedIndex];
 
         var movePlayer = player.GetComponent<MovePlayer>();
 

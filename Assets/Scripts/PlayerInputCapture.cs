@@ -36,4 +36,5 @@ public class PlayerInputCapture : MonoBehaviour
             OnCannonButtonPressed();
         }
     }
+
 }
