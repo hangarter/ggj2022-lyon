@@ -4284,6 +4284,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2648605049693718310, guid: c354e5b563727f2439293cb013917d7c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6862078223284075202, guid: c354e5b563727f2439293cb013917d7c, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -4848,7 +4852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7934047881853797730, guid: e19cbe857050a1a42bc4e3e70372a0dc, type: 3}
       propertyPath: startingTimeInSeconds
-      value: 3
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7934047881853797730, guid: e19cbe857050a1a42bc4e3e70372a0dc, type: 3}
       propertyPath: OnTimesUp.m_PersistentCalls.m_Calls.Array.size
@@ -6912,6 +6916,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4523226183494933073, guid: f5582f2176d569b49a0d7a848fff6c6a, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.103773594
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523226183494933073, guid: f5582f2176d569b49a0d7a848fff6c6a, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.103773594
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523226183494933073, guid: f5582f2176d569b49a0d7a848fff6c6a, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.077993356
+      objectReference: {fileID: 0}
     - target: {fileID: 4523226183494933075, guid: f5582f2176d569b49a0d7a848fff6c6a, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -9489,7 +9505,7 @@ PrefabInstance:
     - target: {fileID: 8622562606361235125, guid: af7073bd73c1e624f824f7314583f515, type: 3}
       propertyPath: playerHittingSounds.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: f4f2559b38036df46b578acc000ca241, type: 3}
+      objectReference: {fileID: 8300000, guid: e0ed759fe6132224fa5fbb15981277a6, type: 3}
     - target: {fileID: 8622562606361235125, guid: af7073bd73c1e624f824f7314583f515, type: 3}
       propertyPath: _playerSpawningPositions.Array.data[0]
       value: 
