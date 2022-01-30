@@ -68,12 +68,10 @@ public class Menu : MonoBehaviour
         switch (targetSectionIndex)
         {
             case -1:
-                Debug.Log("Action");
                 var option = sections[selectedSectionIndex].Options[selectedOptionIndex];
                 option.execute.Invoke();
                 break;
             default:
-                Debug.Log(targetSectionIndex);
                 selectedSectionIndex = targetSectionIndex;
 
                 ShowSection();

@@ -15,12 +15,13 @@ public class PointsManager : MonoBehaviour
     public GameObject icePlatform;
     public Cannon cannonPlayer1;
     public Cannon cannonPlayer2;
+    public int player1Score;
+    public int player2Score;
 
     private List<SquarePointCounter> lavaSquares;
     private List<SquarePointCounter> iceSquares;
     private bool canScore;
-    private int player1Score;
-    private int player2Score;
+
 
     // Start is called before the first frame update
     void Start()
