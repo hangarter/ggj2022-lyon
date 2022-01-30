@@ -132,6 +132,74 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Menu Selection",
+            "id": "43c6de8e-d13f-4993-8bd8-73f3a24bcc16",
+            "actions": [
+                {
+                    "name": "Up",
+                    "type": "Button",
+                    "id": "3e004342-38e5-4f25-ba7a-324467bebb85",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Down",
+                    "type": "Button",
+                    "id": "70b154f2-5259-4d45-b437-002892929b89",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectOption",
+                    "type": "Button",
+                    "id": "b1ca3548-a403-48e7-ad73-d141132482b3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c11425ac-fb77-42a3-a35d-e6045406edf1",
+                    "path": "<XInputController>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e8a1863a-65a9-408a-a828-eb05250c4f10",
+                    "path": "<XInputController>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3f7eedb9-8615-41ae-9bb6-36129e7e49f2",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "SelectOption",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
