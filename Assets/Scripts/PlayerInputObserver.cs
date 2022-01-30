@@ -7,13 +7,13 @@ using UnityEngine.InputSystem;
 public class PlayerInputObserver : MonoBehaviour
 {
     public List<GameObject> _targetPositions;
-    public List<GameObject> _playerSpawningPositions;
+
+    public List<SpawningPosition> _playerSpawningPositions;
     public List<AudioClip> playerHittingSounds;
     public List<PlayerInput> playerInputs;
 
     public List<Cannon> _cannons;
     public GameObject ball;
-    public GameObject playerPrefab;
 
     private int _currentPlayerJoinedIndex;
     private PlayerInputManager _playerInputManager;
@@ -36,10 +36,12 @@ public class PlayerInputObserver : MonoBehaviour
 
     private void OnPlayerJoined(PlayerInput input)
     {
+        var spawningPosition = _playerSpawningPositions[_currentPlayerJoinedIndex];
+
+        var player = Instantiate(spawningPosition.playerPrefab, spawningPosition.transform.position, spawningPosition.transform.rotation);
+
         if (playerInputs == null) playerInputs = new List<PlayerInput>();
         playerInputs.Add(input);
-
-        var player = Instantiate(playerPrefab, _playerSpawningPositions[_currentPlayerJoinedIndex].transform.position, Quaternion.identity);
 
         var playHittingSound = player.GetComponent<PlayHittingSound>();
 

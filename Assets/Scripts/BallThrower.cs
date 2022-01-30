@@ -19,6 +19,7 @@ public class BallThrower : MonoBehaviour
 
     private Rigidbody _ballRigidBody;
     private bool _canHitBall;
+    private Animator _animator;
 
     public enum ThrowDirection
     {
@@ -30,7 +31,9 @@ public class BallThrower : MonoBehaviour
     void Start()
     {
         _canHitBall = true;
-        _ballRigidBody = ball.GetComponent<Rigidbody>();
+        if (ball != null)
+            _ballRigidBody = ball.GetComponent<Rigidbody>();
+        _animator = GetComponentInChildren<Animator>();
     }
 
     private Vector3 ForceDirection()
@@ -48,6 +51,12 @@ public class BallThrower : MonoBehaviour
 
     public void ThrowBall()
     {
+
+        if (CompareTag("Player"))
+        {
+            _animator.SetBool("IsThrowing", true);
+        }
+
         if (OnBallThrown != null)
         {
             OnBallThrown();

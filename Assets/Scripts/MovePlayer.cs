@@ -10,6 +10,7 @@ public class MovePlayer : MonoBehaviour
     public LayerMask platformLayer;
     //public float speed = 1f;
     public bool canMove;
+    public Animator animator;
 
     private CharacterController _characterController;
     private Vector3 _direction;
@@ -34,8 +35,12 @@ public class MovePlayer : MonoBehaviour
         if (canMove)
         {
             _characterController.SimpleMove(_direction * speed);
+            animator.SetFloat("MoveSpeed", _direction.magnitude * speed);
         }
-
+        else
+        {
+            animator.SetFloat("MoveSpeed", 0);
+        }
     }
 
     public void OnPlayerMove(Vector2 value)
