@@ -1632,7 +1632,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8472d620ab695254c9422f5586ce4892, type: 3}
@@ -3787,7 +3787,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6089648925815339125, guid: 0674ecd7b39a26346a69614c47a49b82, type: 3}
       propertyPath: startingTimeInSeconds
-      value: 20
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6089648925815339125, guid: 0674ecd7b39a26346a69614c47a49b82, type: 3}
       propertyPath: OnTimesUp.m_PersistentCalls.m_Calls.Array.size
