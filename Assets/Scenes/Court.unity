@@ -3432,6 +3432,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b057678843a413448ad7ddcfb8513394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingTimeInSeconds: 300
+  OnTimesUp:
+    m_PersistentCalls:
+      m_Calls: []
   countdownText: {fileID: 1793528857}
 --- !u!1 &826469694 stripped
 GameObject:
@@ -9694,6 +9698,18 @@ PrefabInstance:
       propertyPath: _targetPositions.Array.data[1]
       value: 
       objectReference: {fileID: 775888591}
+    - target: {fileID: 8622562606361235125, guid: af7073bd73c1e624f824f7314583f515, type: 3}
+      propertyPath: playerHittingSounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622562606361235125, guid: af7073bd73c1e624f824f7314583f515, type: 3}
+      propertyPath: playerHittingSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e10ac892c9d969d448bdf0b578996805, type: 3}
+    - target: {fileID: 8622562606361235125, guid: af7073bd73c1e624f824f7314583f515, type: 3}
+      propertyPath: playerHittingSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: f4f2559b38036df46b578acc000ca241, type: 3}
     - target: {fileID: 8622562606361235125, guid: af7073bd73c1e624f824f7314583f515, type: 3}
       propertyPath: _playerSpawningPositions.Array.data[0]
       value: 

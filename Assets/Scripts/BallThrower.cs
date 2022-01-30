@@ -31,7 +31,8 @@ public class BallThrower : MonoBehaviour
     void Start()
     {
         _canHitBall = true;
-        _ballRigidBody = ball.GetComponent<Rigidbody>();
+        if (ball != null)
+            _ballRigidBody = ball.GetComponent<Rigidbody>();
         _animator = GetComponentInChildren<Animator>();
     }
 

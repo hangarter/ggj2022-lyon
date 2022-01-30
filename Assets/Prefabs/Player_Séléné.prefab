@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 4921582347821551336}
   - component: {fileID: 4921582347465033393}
   - component: {fileID: 2386292757075374933}
+  - component: {fileID: -1639178620719715713}
   m_Layer: 6
   m_Name: "Player_S\xE9l\xE9n\xE9"
   m_TagString: Player
@@ -115,7 +116,6 @@ MonoBehaviour:
   generalStrength: 1.5
   upStrength: 0.5
   throwDirection: 0
-  tickSource: {fileID: 0}
 --- !u!114 &2386292757075374933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +135,19 @@ MonoBehaviour:
     m_Bits: 256
   canMove: 0
   animator: {fileID: 1560917724250397790}
+--- !u!114 &-1639178620719715713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8476426788872201375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c296caed80949d04d8aa1051c3063c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hittingSound: {fileID: 8300000, guid: f4f2559b38036df46b578acc000ca241, type: 3}
 --- !u!1001 &4955063291850187215
 PrefabInstance:
   m_ObjectHideFlags: 0

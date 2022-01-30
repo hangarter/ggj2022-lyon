@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 1298646504}
   - component: {fileID: 1520946609}
   - component: {fileID: 7300662165240543317}
+  - component: {fileID: -8432654077183553769}
   m_Layer: 6
   m_Name: Player_Helios
   m_TagString: Player
@@ -115,7 +116,6 @@ MonoBehaviour:
   generalStrength: 1.5
   upStrength: 0.5
   throwDirection: 0
-  tickSource: {fileID: 0}
 --- !u!114 &7300662165240543317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +135,19 @@ MonoBehaviour:
     m_Bits: 256
   canMove: 0
   animator: {fileID: 4874790958242236000}
+--- !u!114 &-8432654077183553769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3597998216962797471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c296caed80949d04d8aa1051c3063c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hittingSound: {fileID: 8300000, guid: e10ac892c9d969d448bdf0b578996805, type: 3}
 --- !u!1001 &1354502829096582129
 PrefabInstance:
   m_ObjectHideFlags: 0
