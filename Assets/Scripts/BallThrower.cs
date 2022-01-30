@@ -7,6 +7,10 @@ using UnityEngine.InputSystem;
 
 public class BallThrower : MonoBehaviour
 {
+    public delegate void NotifyCannonEvent();
+
+    public event NotifyCannonEvent OnBallThrown;
+
     public GameObject targetPosition;
     public GameObject ball;
     public float generalStrength = 2f;
@@ -17,8 +21,6 @@ public class BallThrower : MonoBehaviour
     private bool _canHitBall;
     private Animator _animator;
 
-    public AudioSource tickSource;
-
     public enum ThrowDirection
     {
         Left,
@@ -28,7 +30,6 @@ public class BallThrower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tickSource = GetComponent<AudioSource>();
         _canHitBall = true;
         _ballRigidBody = ball.GetComponent<Rigidbody>();
         _animator = GetComponentInChildren<Animator>();
@@ -49,11 +50,15 @@ public class BallThrower : MonoBehaviour
 
     public void ThrowBall()
     {
-        Debug.Log(transform.forward);
 
         if (CompareTag("Player"))
         {
             _animator.SetBool("IsThrowing", true);
+        }
+
+        if (OnBallThrown != null)
+        {
+            OnBallThrown();
         }
 
         switch (throwDirection)
@@ -64,7 +69,6 @@ public class BallThrower : MonoBehaviour
             case ThrowDirection.Right:
                 _ballRigidBody.AddForce(new Vector3(0, .3f, -1f) * generalStrength, ForceMode.Impulse);
                 break;
-                tickSource.Play();
         }
         _canHitBall = false;
         Task.Run(() =>

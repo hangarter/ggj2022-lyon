@@ -7,7 +7,11 @@ using UnityEngine.InputSystem;
 public class PlayerInputObserver : MonoBehaviour
 {
     public List<GameObject> _targetPositions;
+
     public List<SpawningPosition> _playerSpawningPositions;
+    public List<AudioClip> playerHittingSounds;
+    public List<PlayerInput> playerInputs;
+
     public List<Cannon> _cannons;
     public GameObject ball;
 
@@ -22,6 +26,7 @@ public class PlayerInputObserver : MonoBehaviour
 
         _playerInputManager.onPlayerJoined += OnPlayerJoined;
         _playerInputManager.onPlayerLeft += OnPlayerLeft;
+
     }
 
     private void OnPlayerLeft(PlayerInput input)
@@ -32,7 +37,15 @@ public class PlayerInputObserver : MonoBehaviour
     private void OnPlayerJoined(PlayerInput input)
     {
         var spawningPosition = _playerSpawningPositions[_currentPlayerJoinedIndex];
+
         var player = Instantiate(spawningPosition.playerPrefab, spawningPosition.transform.position, spawningPosition.transform.rotation);
+
+        if (playerInputs == null) playerInputs = new List<PlayerInput>();
+        playerInputs.Add(input);
+
+        var playHittingSound = player.GetComponent<PlayHittingSound>();
+
+        playHittingSound.hittingSound = playerHittingSounds[_currentPlayerJoinedIndex];
 
         var movePlayer = player.GetComponent<MovePlayer>();
 
