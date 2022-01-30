@@ -11,6 +11,7 @@ public class ScreensManager : MonoBehaviour
     public PlayerInputObserver playerInputObserver;
     public GameObject helios;
     public GameObject selena;
+    public GameObject aTie;
     public TMP_Text victoryText;
 
     public void ShowVictoryScreen()
@@ -26,6 +27,7 @@ public class ScreensManager : MonoBehaviour
         {
             helios.SetActive(true);
             selena.SetActive(false);
+            aTie.SetActive(false);
             victoryText.text = "Helios wins!";
         }
 
@@ -33,7 +35,17 @@ public class ScreensManager : MonoBehaviour
         {
             helios.SetActive(false);
             selena.SetActive(true);
+            aTie.SetActive(false);
             victoryText.text = "Selena wins!";
+        }
+
+        if (pointsManager.player2Score == pointsManager.player1Score)
+        {
+            helios.SetActive(false);
+            selena.SetActive(false);
+            aTie.SetActive(true);
+            
+            victoryText.text = "It's a tie !";
         }
     }
 }
