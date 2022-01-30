@@ -16,6 +16,8 @@ public class BallThrower : MonoBehaviour
     private Rigidbody _ballRigidBody;
     private bool _canHitBall;
 
+    public AudioSource tickSource;
+
     public enum ThrowDirection
     {
         Left,
@@ -25,6 +27,7 @@ public class BallThrower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        tickSource = GetComponent<AudioSource>();
         _canHitBall = true;
         _ballRigidBody = ball.GetComponent<Rigidbody>();
     }
@@ -53,6 +56,7 @@ public class BallThrower : MonoBehaviour
             case ThrowDirection.Right:
                 _ballRigidBody.AddForce(new Vector3(0, .3f, -1f) * generalStrength, ForceMode.Impulse);
                 break;
+                tickSource.Play();
         }
         _canHitBall = false;
         Task.Run(() =>

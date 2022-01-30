@@ -9,6 +9,7 @@ public class ChangeMaterial : MonoBehaviour
     public Material SwitchedMaterial;
     Renderer rend;
     public bool isCorrupt = false;
+    public AudioSource tickSource;
 
     // Start is called before the first frame update
     void Start()
@@ -16,13 +17,14 @@ public class ChangeMaterial : MonoBehaviour
         rend = GetComponent<Renderer>();
         rend.enabled = true;
         rend.sharedMaterial = InitialMaterial;
-
+        tickSource = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision col)
     {
         if (!isCorrupt && col.gameObject.tag == "Ball")
         {
+            tickSource.Play();
             StartCoroutine(colorObjectOverTime(10));
             isCorrupt = true;
         }   
