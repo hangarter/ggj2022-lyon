@@ -15,6 +15,7 @@ public class BallThrower : MonoBehaviour
 
     private Rigidbody _ballRigidBody;
     private bool _canHitBall;
+    private Animator _animator;
 
     public AudioSource tickSource;
 
@@ -30,6 +31,7 @@ public class BallThrower : MonoBehaviour
         tickSource = GetComponent<AudioSource>();
         _canHitBall = true;
         _ballRigidBody = ball.GetComponent<Rigidbody>();
+        _animator = GetComponentInChildren<Animator>();
     }
 
     private Vector3 ForceDirection()
@@ -48,6 +50,12 @@ public class BallThrower : MonoBehaviour
     public void ThrowBall()
     {
         Debug.Log(transform.forward);
+
+        if (CompareTag("Player"))
+        {
+            _animator.SetBool("IsThrowing", true);
+        }
+
         switch (throwDirection)
         {
             case ThrowDirection.Left:
