@@ -30,7 +30,9 @@ Transform:
   m_LocalPosition: {x: 9.82, y: 0.46, z: 17.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6920660844537266683}
+  - {fileID: 5223530665860470127}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
@@ -95,5 +97,95 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0707989, y: 6.1036806, z: 1.7185287}
-  m_Center: {x: -0.017271996, y: -0.015107632, z: -0.18655443}
+  m_Size: {x: 2.0707989, y: 6.1036806, z: 0.6}
+  m_Center: {x: -0.017271996, y: -0.015107632, z: 0.16}
+--- !u!1 &6136323695596515186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6920660844537266683}
+  - component: {fileID: 20790809621355738}
+  m_Layer: 0
+  m_Name: Left Ramp Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6920660844537266683
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6136323695596515186}
+  m_LocalRotation: {x: 0, y: -0.19337817, z: 0, w: 0.9811243}
+  m_LocalPosition: {x: -0.27, y: 0.06, z: 0.51}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1590911492844086779}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -22.3, z: 0}
+--- !u!65 &20790809621355738
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6136323695596515186}
+  m_Material: {fileID: 13400000, guid: 50b51bf3bbbb18348b9e9aea57694fda, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 6.1036806, z: 0.17}
+  m_Center: {x: -0.2, y: -0.015107632, z: 0.16}
+--- !u!1 &7977579549395919996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5223530665860470127}
+  - component: {fileID: 5576430382866412023}
+  m_Layer: 0
+  m_Name: Right Ramp Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5223530665860470127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7977579549395919996}
+  m_LocalRotation: {x: 0.19337817, y: 0, z: 0.9811243, w: 0}
+  m_LocalPosition: {x: 0.25, y: 0.04340458, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1590911492844086779}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 22.3, z: 180}
+--- !u!65 &5576430382866412023
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7977579549395919996}
+  m_Material: {fileID: 13400000, guid: 50b51bf3bbbb18348b9e9aea57694fda, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 6.1036806, z: 0.17}
+  m_Center: {x: -0.2, y: -0.015107632, z: 0.16}
