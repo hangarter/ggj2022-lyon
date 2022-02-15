@@ -16,7 +16,6 @@ public class ScreensManager : MonoBehaviour
 
     public void ShowVictoryScreen()
     {
-        Debug.Log(playerInputObserver);
         playerInputObserver.playerInputs.ForEach(playerInput =>
         {
             playerInput.currentActionMap = playerInput.actions.FindActionMap("Victory Screen Selection");
